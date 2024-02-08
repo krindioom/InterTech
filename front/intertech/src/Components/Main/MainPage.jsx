@@ -1,8 +1,9 @@
 import React from 'react'
+import NotesContainer from './NotesContainer';
 
 const MainPage = () => {
   return (
-    <div>Main</div>
+    <NotesContainer/>
   )
 }
 
