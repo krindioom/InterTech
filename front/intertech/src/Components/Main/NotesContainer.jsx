@@ -21,12 +21,14 @@ const StyledNoteWrapper = styled(Note)`
 const NotesContainer = () => {
     const notesList = useRecoilValue(ListViewSelector);
 
+    const res = notesList.length ? notesList.map((item) => {
+        return <StyledNoteWrapper key={item.id} id={item.id} title={item.title} ></StyledNoteWrapper>
+    }) : (<h2>Ничего нету</h2>);
+
     return (
         <NotesList>
             {
-                notesList.map((item) => {
-                    return <StyledNoteWrapper key={item.id} id={item.id} title={item.title} ></StyledNoteWrapper>
-                })
+                res
             }
         </NotesList>
     )
