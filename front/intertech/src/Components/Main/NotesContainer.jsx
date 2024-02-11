@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const NotesList = styled.div`
   background-color: #B96B85; 
-  width:50%;
+  width:100%;
   height:400px;
   border-radius: 4px; 
   overflow-x:hidden;
@@ -21,15 +21,15 @@ const StyledNoteWrapper = styled(Note)`
 const NotesContainer = () => {
     const notesList = useRecoilValue(ListViewSelector);
 
-    const res = notesList.length ? notesList.map((item) => {
-        return <StyledNoteWrapper key={item.id} id={item.id} title={item.title} ></StyledNoteWrapper>
-    }) : (<h2>Ничего нету</h2>);
+    const res = notesList.length ?
+        notesList.map((item) => {
+            return <StyledNoteWrapper key={item.id} id={item.id} title={item.title} />
+        }) :
+        (<h2>Ничего нету</h2>);
 
     return (
         <NotesList>
-            {
-                res
-            }
+            {res}
         </NotesList>
     )
 }

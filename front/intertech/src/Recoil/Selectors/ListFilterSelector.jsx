@@ -1,7 +1,7 @@
 import { selectorFamily } from "recoil";
 import { TasksState } from "../Atoms/TasksState";
 
-export const NotesFilterSelector = selectorFamily({
+export const ListFilterSelector = selectorFamily({
   key: 'NotesFilterSelector',
   get: (parametr) => ({get}) => {
     const items = get(TasksState);

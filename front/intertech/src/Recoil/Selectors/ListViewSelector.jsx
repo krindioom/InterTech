@@ -1,6 +1,6 @@
 import { selector } from "recoil";
 import { TasksState } from "../Atoms/TasksState";
-import { NotesFilterSelector } from "./NotesFilterSelector";
+import { ListFilterSelector } from "./ListFilterSelector";
 import { NoteFilterTextState } from "../Atoms/NoteFilterTextState";
 
 export const ListViewSelector = selector({
@@ -8,7 +8,7 @@ export const ListViewSelector = selector({
     get: ({ get }) => {
         const filter = get(NoteFilterTextState);
         
-        const notesList = get(NotesFilterSelector(filter));
+        const notesList = get(ListFilterSelector(filter));
         console.log(notesList);
         const listViewNotes = notesList.map((item) => {
             const { id, title } = item;
