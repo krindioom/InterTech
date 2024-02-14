@@ -6,12 +6,14 @@ import styled from 'styled-components';
 
 const NotesList = styled.div`
   background-color: #B96B85; 
-  width:100%;
   height:400px;
   border-radius: 4px; 
   overflow-x:hidden;
   overflow-y:auto;
   padding:4px;
+  > *:nth-child(2n+1) {
+    background: #faa4b4;
+  }
 `;
 
 const StyledNoteWrapper = styled(Note)`

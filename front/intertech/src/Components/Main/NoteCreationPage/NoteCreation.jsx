@@ -1,17 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledNoteCreation = styled.div`
-  width:50%;
-  height:400px;
-  background: #048399;  
-  border-radius:10px;
-`;
+const StyledTextArea = styled.textarea`
+  display: block;
+  width:80%;
+  height:100%;
+  &:placeholder{
+    color:red;
+  }
+`
 
 const NoteCreation = () => {
   return (
-    <StyledNoteCreation>NoteCreation</StyledNoteCreation>
+    <StyledTextArea placeholder='Сюда пиши!'></StyledTextArea>
   )
 }
 
 export default NoteCreation
+

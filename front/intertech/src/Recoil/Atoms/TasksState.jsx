@@ -6,58 +6,19 @@ export const TasksState = atom({
         {
             id: 0,
             title: "title1",
-            text: "большой текст",
+            type: "text",
+            content: {
+                text: "huge text",
+            }
         },
+
         {
             id: 1,
-            title: "t2",
-            text: "большой текст",
-        },
-        {
-            id: 2,
-            title: "t3",
-            text: "большой текст",
-        },
-        {
-            id: 3,
-            title: "t4",
-            text: "большой текст",
-
-        },
-        {
-            id: 4,
-            title: "t5",
-            text: "большой текст",
-
-        },
-        {
-            id: 5,
-            title: "title1",
-            text: "большой текст",
-
-        },
-        {
-            id: 6,
-            title: "t2",
-            text: "большой текст",
-
-        },
-        {
-            id: 7,
-            title: "t3",
-            text: "большой текст",
-
-        },
-        {
-            id: 8,
-            title: "t4",
-            text: "большой текст",
-
-        },
-        {
-            id: 9,
-            title: "t5",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error veritatis ducimus assumenda culpa omnis iusto architecto minima distinctio? Nesciunt, cum. Iusto, voluptatibus neque nobis ipsa eligendi excepturi qui praesentium dolor?",
+            title: "title2",
+            type: "contentRef",
+            content: {
+                url: "https://img.freepik.com/free-photo/landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise_335224-794.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1707782400&semt=sph",
+            }
         },
     ],
 });

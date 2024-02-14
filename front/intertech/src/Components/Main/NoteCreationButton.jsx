@@ -14,7 +14,7 @@ const StyledNoteCreationButton = styled(Link)`
 
 const NoteCreationButton = () => {
   return (
-    <StyledNoteCreationButton to="/create">
+    <StyledNoteCreationButton to="/create/note">
         <PlusOutlined/>
     </StyledNoteCreationButton>
   )

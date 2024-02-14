@@ -2,20 +2,17 @@ import React from 'react'
 import { NoteSelector } from '../../../Recoil/Selectors/NoteSelector';
 import { useRecoilValue } from 'recoil';
 import { useParams } from 'react-router-dom';
+import NoteContentWrapper from './NoteContentWrapper';
 
 const NoteView = () => {
 
     const { id } = useParams();
 
-    const view = useRecoilValue(NoteSelector(id));
-    console.log(view);
+    //const view = useRecoilValue(NoteSelector(id));
 
     return (
         <div>
-            <h4>{view.title}</h4>
-            <p>
-                {view.text}
-            </p>
+            <NoteContentWrapper/>
         </div>
     )
 }
