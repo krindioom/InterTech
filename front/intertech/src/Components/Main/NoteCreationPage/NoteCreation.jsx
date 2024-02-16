@@ -23,7 +23,7 @@ const NoteCreation = () => {
     const handleContentChange = (e) => {
         setContent((current) => ({
             ...current,
-            text: e.target.value,
+            content: e.target.value,
         }));
     };
 

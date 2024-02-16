@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import NoteCreationNavigation from "../Main/NoteCreationPage/NoteCreationNavigation";
-import { Outlet } from "react-router-dom";
+import { Outlet, redirect, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import useSaveNote from "../../Hooks/useSaveNote";
+import DropDownRouter from "../DropDownRouter";
+import { Button } from "antd";
+import { MenuFoldOutlined, MenuOutlined } from "@ant-design/icons";
 
 const Content = styled.div`
     width: 40%;
@@ -25,15 +28,40 @@ const StyledNavigation = styled.nav`
 
 const CreationLayout = () => {
     const [title, setTitle] = useState("");
-    const saveNote = useSaveNote({ title: title});
+    const saveNote = useSaveNote({ title: title });
+    const navigate = useNavigate();
     return (
         <Content>
             <StyledNavigation>
-                <NoteCreationNavigation />
+                <DropDownRouter
+                    menuItems={[
+                        {
+                            path: "note",
+                            pathName: "записка",
+                        },
+                        {
+                            path: "content-ref",
+                            pathName: "ссылка",
+                        },
+                        {
+                            path: "/",
+                            pathName: "домой",
+                        },
+                    ]}>
+                    <Button>
+                        <MenuOutlined>записки</MenuOutlined>
+                    </Button>
+                </DropDownRouter>
             </StyledNavigation>
-            <input onChange={(e) => setTitle(e.target.value)} type="text" />
+            <input maxLength={20} onChange={(e) => setTitle(e.target.value)} type="text" />
             <Outlet></Outlet>
-            <button onClick={() => saveNote()}>Добавить</button>
+            <button
+                onClick={() => {
+                    saveNote();
+                    navigate("/");
+                }}>
+                Добавить
+            </button>
         </Content>
     );
 };

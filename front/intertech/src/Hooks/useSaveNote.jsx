@@ -21,6 +21,12 @@ const useSaveNote = ({title}) => {
     }, [content, title]);
 
     const save = () => {
+        if(!noteTemplate.content.content)
+            return;
+
+        if(!noteTemplate.title)
+            return;
+        console.log(noteTemplate.content)
         setNotesList(curent => [...curent, noteTemplate]);
     };
 

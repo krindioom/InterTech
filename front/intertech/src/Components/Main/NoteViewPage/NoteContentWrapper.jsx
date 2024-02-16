@@ -5,6 +5,8 @@ import { useRecoilValue } from "recoil";
 import { SelectedNoteObjectState } from "../../../Recoil/Atoms/SelectedNoteObjectState";
 
 const NoteContentWrapper = () => {
+
+
     const contentViews = {
         text: <TextNoteContent />,
         contentRef: <ContentRefNoteContent />,

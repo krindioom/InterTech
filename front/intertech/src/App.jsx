@@ -18,7 +18,7 @@ function App() {
                     <Route index element={<MainPage />} />
                     <Route path="/create" element={<CreationLayout/>}>
                         <Route path="note" element={<NoteCreation />}/>
-                        <Route path="aaa" element={<ContentReferenceCreation />}/>
+                        <Route path="content-ref" element={<ContentReferenceCreation />}/>
                     </Route>
                     <Route path="/:id" element={<NoteView/>}/>
                 </Route>

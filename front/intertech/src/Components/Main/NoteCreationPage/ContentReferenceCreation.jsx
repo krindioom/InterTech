@@ -25,7 +25,7 @@ const ContentReferenceCreation = () => {
         setContent((current) => ({
             ...current,
             type: type.contentRef,
-            url: url,
+            content: url,
         }));
     }, [url, setContent, type.contentRef]);
 
