@@ -14,7 +14,7 @@ const NoteContentWrapper = () => {
 
     return (
         <div>
-            {contentViews[selectedNote.type]}
+            {contentViews[selectedNote.content.type]}
         </div>
     );
 };

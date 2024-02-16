@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import NoteCreationNavigation from "../Main/NoteCreationPage/NoteCreationNavigation";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+
+import useSaveNote from "../../Hooks/useSaveNote";
 
 const Content = styled.div`
     width: 40%;
@@ -22,14 +24,16 @@ const StyledNavigation = styled.nav`
 `;
 
 const CreationLayout = () => {
+    const [title, setTitle] = useState("");
+    const saveNote = useSaveNote({ title: title});
     return (
         <Content>
             <StyledNavigation>
                 <NoteCreationNavigation />
             </StyledNavigation>
-            <input type="text" />
+            <input onChange={(e) => setTitle(e.target.value)} type="text" />
             <Outlet></Outlet>
-            <button>Добавить</button>
+            <button onClick={() => saveNote()}>Добавить</button>
         </Content>
     );
 };

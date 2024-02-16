@@ -27,9 +27,6 @@ const NoteCreationNavigation = () => {
                     <li>
                         <Link onClick={() => closeDrawer()} to="aaa">back</Link>
                     </li>
-                    <li>
-                        <Link onClick={() => closeDrawer()} to="to">back</Link>
-                    </li>
                 </ul>
             </Drawer>
         </>
