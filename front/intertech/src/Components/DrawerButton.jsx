@@ -2,7 +2,6 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Button, Drawer } from "antd";
 import React, { useState } from "react";
 
-////Unused!
 const DrawerButton = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
