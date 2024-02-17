@@ -18,7 +18,7 @@ const DrawerButton = ({ children }) => {
             <Button onClick={() => showDrawer()}>
                 <MenuOutlined spin />
             </Button>
-            <Drawer open={isOpen} onClose={() => closeDrawer()}>
+            <Drawer destroyOnClose open={isOpen} onClose={() => closeDrawer()}>
                 {children}
             </Drawer>
         </>
